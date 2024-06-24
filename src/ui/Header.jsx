@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import SearchOrder from "../features/order/SearchOrder";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,6 +8,7 @@ const Header = () => {
       <Link to="/">
         <Logo />
       </Link>
+      <SearchOrder />
     </header>
   );
 };
