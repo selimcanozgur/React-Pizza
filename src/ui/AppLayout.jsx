@@ -1,9 +1,20 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
+import CartOverview from "../features/cart/CartOverview";
+import Loader from "./Loader";
+import Header from "./Header";
 
 const AppLayout = () => {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+
   return (
     <div>
-      <Outlet />
+      {isLoading && <Loader />}
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <CartOverview />
     </div>
   );
 };
