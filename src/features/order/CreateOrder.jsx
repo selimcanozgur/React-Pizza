@@ -39,7 +39,7 @@ function CreateOrder() {
 
   const formErrors = useActionData();
 
-  // const [withPriority, setWithPriority] = useState(false);
+
   const cart = fakeCart;
 
   return (
@@ -83,8 +83,7 @@ function CreateOrder() {
             type="checkbox"
             name="priority"
             id="priority"
-            // value={withPriority}
-            // onChange={(e) => setWithPriority(e.target.checked)}
+    
           />
           <label htmlFor="priority" className="font-medium">
             Want to yo give your order priority?
@@ -118,12 +117,6 @@ export async function action({ request }) {
       'Please give us your correct phone number. We might need it to contact you.';
 
   if (Object.keys(errors).length > 0) return errors;
-
-  // If everything is okay, create new order and redirect
-
-  // const newOrder = await createOrder(order);
-
-  // return redirect(`/order/${newOrder.id}`);
 
   return null;
 }
